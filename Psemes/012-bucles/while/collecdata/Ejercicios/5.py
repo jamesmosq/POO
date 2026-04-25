@@ -8,3 +8,5 @@ while len(fibonacci) < n:
     fibonacci.append(siguiente)
 
 print(f"Los primeros {n} números de Fibonacci:", fibonacci)
+for i in fibonacci:
+    print(i)

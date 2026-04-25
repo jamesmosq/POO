@@ -1,8 +1,8 @@
 #Llenar una lista con números pares hasta un límite:
 
 pares = []
-numero = 0
-limite = 20
+numero = 1
+limite = 10
 
 while numero <= limite:
     if numero % 2 == 0:

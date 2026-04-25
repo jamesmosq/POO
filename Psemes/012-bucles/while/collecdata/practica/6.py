@@ -1,6 +1,6 @@
 #Buscar un valor en un diccionario
 precios = {'manzana': 0.5, 'banana': 0.3, 'naranja': 0.4, 'pera': 0.6}
-busc_precio = 9.0
+busc_precio = 0.4
 encontrado = False
 
 items = list(precios.items())

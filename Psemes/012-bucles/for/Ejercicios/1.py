@@ -1,8 +1,5 @@
-for letter in 'gkforgk':
+#Iterar sobre una lista
+frutas = ['manzana', 'banana', 'cereza', 'dátil','mani','arroz']
+for i in frutas:
+    print(f"Me gusta comer {i}")
 
-    # break the loop as soon it sees 'e'
-    # or 's'
-    if letter == 'e' or letter == 's':
-        break
-
-print('Current Letter :', letter)

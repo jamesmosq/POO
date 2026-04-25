@@ -9,4 +9,7 @@ while inventario and max(inventario.values()) > 3:
 
 print("Frutas a vender:", frutas_a_vender)
 print("Inventario restante:", inventario)
+max()
+min()
+sum()
 

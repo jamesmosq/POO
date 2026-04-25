@@ -1,6 +1,6 @@
 # Ejemplo: Buscar un elemento en una tupla
-colores = ('rojo', 'verde', 'azul', 'amarillo')
-buscar = 'azul'
+colores = ('rojo', 'verde', 'azul', 'amarillo','gatos')
+buscar = 'gatos'
 indice = 0
 
 while indice < len(colores):

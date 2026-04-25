@@ -40,6 +40,9 @@ def conversor_temperatura():
         print("Opción no válida")
 
 
+
+
+
 # Uso de la función principal
 conversor_temperatura()
 

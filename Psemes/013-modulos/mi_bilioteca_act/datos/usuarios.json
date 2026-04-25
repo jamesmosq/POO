@@ -1,0 +1,17 @@
+[
+  {
+    "username": "ana",
+    "password": "1234",
+    "nombre": "ana naan",
+    "es_admin": true
+  },
+  {
+    "nombre": "carlos",
+    "telefono": "225522",
+    "referencia": {
+      "nombre": "juan pi\u00f1a",
+      "telefono": "567213"
+    },
+    "es_admin": false
+  }
+]

@@ -7,4 +7,7 @@ while True:
         break
     palabras.append(palabra)
 
-print("Lista de palabras:", palabras)
+for i in palabras:
+        print(f" organmizados con un for {i}")
+
+#print("Lista de palabras:", palabras)

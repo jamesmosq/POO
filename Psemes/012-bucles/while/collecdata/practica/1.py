@@ -1,6 +1,6 @@
 # Procesar una lista hasta encontrar un valor específico
 numeros = [1, 3, 5, 7, 9, 11, 13, 15]
-objetivo = 11
+objetivo = 111
 indice = 0
 
 while indice < len(numeros):

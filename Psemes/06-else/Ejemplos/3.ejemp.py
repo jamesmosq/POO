@@ -1,6 +1,6 @@
 #Uso de if-else:
 
-temperatura = 25
+temperatura = 47
 if temperatura > 30:
     print("Hace calor")
 else:
