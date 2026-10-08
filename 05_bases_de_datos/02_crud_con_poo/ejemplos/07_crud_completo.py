@@ -23,7 +23,7 @@ class DatabaseManager:
             self.cursor = self.connection.cursor()
             return True
         except mysql.connector.Error as error:
-            print(f"❌ Error de conexión: {error}")
+            print(f"Error de conexión: {error}")
             return False
 
     def disconnect(self):
@@ -39,7 +39,7 @@ class DatabaseManager:
             self.connection.commit()
             return self.cursor.rowcount
         except mysql.connector.Error as error:
-            print(f"❌ Error al ejecutar consulta: {error}")
+            print(f"Error al ejecutar consulta: {error}")
             return 0
 
     def fetch_query(self, query, data=None):
@@ -50,7 +50,7 @@ class DatabaseManager:
                 self.cursor.execute(query)
             return self.cursor.fetchall()
         except mysql.connector.Error as error:
-            print(f"❌ Error al ejecutar consulta: {error}")
+            print(f"Error al ejecutar consulta: {error}")
             return None
 
     def fetch_columns(self):
@@ -74,12 +74,12 @@ class EmployeeCRUD:
         results = self.db_manager.fetch_query(query)
         if results:
             columns = self.db_manager.fetch_columns()
-            print(f"\n📋 TODOS LOS EMPLEADOS")
-            print(f"📊 Total: {len(results)} empleados")
+            print(f"\nTODOS LOS EMPLEADOS")
+            print(f"Total: {len(results)} empleados")
             print("-" * 60)
             print(tabulate(results, headers=columns, tablefmt='grid'))
         else:
-            print("❌ No se encontraron empleados")
+            print("No se encontraron empleados")
 
     def read_employee_by_id(self, employee_id):
         """Muestra un empleado específico"""
@@ -88,7 +88,7 @@ class EmployeeCRUD:
 
         if results:
             emp = results[0]
-            print(f"\n👤 EMPLEADO ID: {employee_id}")
+            print(f"\nEMPLEADO ID: {employee_id}")
             print("-" * 40)
             print(f"ID: {emp[0]}")
             print(f"Apellido: {emp[1]}")
@@ -98,7 +98,7 @@ class EmployeeCRUD:
             print(f"Notas: {emp[5]}")
             return True
         else:
-            print(f"❌ No se encontró empleado con ID: {employee_id}")
+            print(f"No se encontró empleado con ID: {employee_id}")
             return False
 
     # ========== CREATE ==========
@@ -119,11 +119,11 @@ class EmployeeCRUD:
 
         if result:
             new_id = result[0][0]
-            print(f"✅ Empleado creado exitosamente con ID: {new_id}")
-            print(f"👤 {first_name} {last_name}")
+            print(f"Empleado creado exitosamente con ID: {new_id}")
+            print(f"{first_name} {last_name}")
             return new_id
         else:
-            print("❌ Error al crear empleado")
+            print("Error al crear empleado")
             return None
 
     # ========== UPDATE ==========
@@ -154,7 +154,7 @@ class EmployeeCRUD:
             update_values.append(notes)
 
         if not update_fields:
-            print("⚠️ No hay campos para actualizar")
+            print("No hay campos para actualizar")
             return False
 
         update_values.append(employee_id)
@@ -163,11 +163,11 @@ class EmployeeCRUD:
         rows_affected = self.db_manager.execute_query(query, tuple(update_values))
 
         if rows_affected > 0:
-            print(f"\n✅ Empleado ID {employee_id} actualizado correctamente")
+            print(f"\nEmpleado ID {employee_id} actualizado correctamente")
             self.read_employee_by_id(employee_id)  # Mostrar datos actualizados
             return True
         else:
-            print(f"❌ Error al actualizar empleado ID {employee_id}")
+            print(f"Error al actualizar empleado ID {employee_id}")
             return False
 
     # ========== DELETE ==========
@@ -181,10 +181,10 @@ class EmployeeCRUD:
         rows_affected = self.db_manager.execute_query(query, (employee_id,))
 
         if rows_affected > 0:
-            print(f"\n✅ Empleado ID {employee_id} eliminado correctamente")
+            print(f"\nEmpleado ID {employee_id} eliminado correctamente")
             return True
         else:
-            print(f"❌ Error al eliminar empleado ID {employee_id}")
+            print(f"Error al eliminar empleado ID {employee_id}")
             return False
 
     # ========== SEARCH ==========
@@ -201,13 +201,13 @@ class EmployeeCRUD:
 
         if results:
             columns = self.db_manager.fetch_columns()
-            print(f"\n🔍 BÚSQUEDA: '{search_term}'")
-            print(f"📊 Resultados: {len(results)} empleados")
+            print(f"\nBÚSQUEDA: '{search_term}'")
+            print(f"Resultados: {len(results)} empleados")
             print("-" * 60)
             print(tabulate(results, headers=columns, tablefmt='grid'))
             return True
         else:
-            print(f"❌ No se encontraron empleados que contengan '{search_term}'")
+            print(f"No se encontraron empleados que contengan '{search_term}'")
             return False
 
 
@@ -225,15 +225,15 @@ class EmployeeMenu:
     def show_menu(self):
         """Muestra el menú principal"""
         print("\n" + "=" * 50)
-        print("🗃️  SISTEMA CRUD - EMPLEADOS NORTHWIND")
+        print("SISTEMA CRUD - EMPLEADOS NORTHWIND")
         print("=" * 50)
-        print("1️⃣  Ver todos los empleados (READ)")
-        print("2️⃣  Buscar empleado por ID")
-        print("3️⃣  Crear nuevo empleado (CREATE)")
-        print("4️⃣  Actualizar empleado (UPDATE)")
-        print("5️⃣  Eliminar empleado (DELETE)")
-        print("6️⃣  Buscar empleados (SEARCH)")
-        print("0️⃣  Salir")
+        print("1⃣  Ver todos los empleados (READ)")
+        print("2⃣  Buscar empleado por ID")
+        print("3⃣  Crear nuevo empleado (CREATE)")
+        print("4⃣  Actualizar empleado (UPDATE)")
+        print("5⃣  Eliminar empleado (DELETE)")
+        print("6⃣  Buscar empleados (SEARCH)")
+        print("0⃣  Salir")
         print("-" * 50)
 
     def get_input(self, prompt, input_type=str):
@@ -246,36 +246,36 @@ class EmployeeMenu:
                 elif input_type == str:
                     return value
             except ValueError:
-                print("❌ Por favor ingresa un valor válido")
+                print("Por favor ingresa un valor válido")
 
     def run(self):
         """Ejecuta el menú principal"""
-        print("🚀 Iniciando sistema...")
+        print("Iniciando sistema...")
 
         if not self.db_manager.connect():
-            print("💥 No se pudo conectar a la base de datos")
+            print("No se pudo conectar a la base de datos")
             return
 
-        print("✅ Conexión establecida correctamente")
+        print("Conexión establecida correctamente")
 
         try:
             while True:
                 self.show_menu()
-                opcion = self.get_input("🔍 Selecciona una opción: ", str)
+                opcion = self.get_input("Selecciona una opción: ", str)
 
                 if opcion == "0":
-                    print("👋 ¡Hasta luego!")
+                    print("¡Hasta luego!")
                     break
 
                 elif opcion == "1":
                     self.employee_crud.read_all_employees()
 
                 elif opcion == "2":
-                    employee_id = self.get_input("📝 Ingresa el ID del empleado: ", int)
+                    employee_id = self.get_input("Ingresa el ID del empleado: ", int)
                     self.employee_crud.read_employee_by_id(employee_id)
 
                 elif opcion == "3":
-                    print("\n📝 CREAR NUEVO EMPLEADO")
+                    print("\nCREAR NUEVO EMPLEADO")
                     print("-" * 30)
                     last_name = self.get_input("Apellido: ")
                     first_name = self.get_input("Nombre: ")
@@ -286,10 +286,10 @@ class EmployeeMenu:
                     self.employee_crud.create_employee(last_name, first_name, birth_date, photo, notes)
 
                 elif opcion == "4":
-                    employee_id = self.get_input("📝 ID del empleado a actualizar: ", int)
+                    employee_id = self.get_input("ID del empleado a actualizar: ", int)
 
                     if self.employee_crud.read_employee_by_id(employee_id):
-                        print("\n📝 ACTUALIZAR EMPLEADO (Enter para mantener valor actual)")
+                        print("\nACTUALIZAR EMPLEADO (Enter para mantener valor actual)")
                         print("-" * 50)
 
                         last_name = self.get_input("Nuevo apellido: ")
@@ -308,31 +308,31 @@ class EmployeeMenu:
                         self.employee_crud.update_employee(employee_id, last_name, first_name, birth_date, photo, notes)
 
                 elif opcion == "5":
-                    employee_id = self.get_input("📝 ID del empleado a eliminar: ", int)
+                    employee_id = self.get_input("ID del empleado a eliminar: ", int)
 
                     # Confirmación
-                    confirm = self.get_input("⚠️  ¿Estás seguro? (s/N): ")
+                    confirm = self.get_input("¿Estás seguro? (s/N): ")
                     if confirm.lower() in ['s', 'si', 'sí', 'yes', 'y']:
                         self.employee_crud.delete_employee(employee_id)
                     else:
-                        print("❌ Eliminación cancelada")
+                        print("Eliminación cancelada")
 
                 elif opcion == "6":
-                    search_term = self.get_input("📝 Término de búsqueda (nombre o apellido): ")
+                    search_term = self.get_input("Término de búsqueda (nombre o apellido): ")
                     self.employee_crud.search_employees(search_term)
 
                 else:
-                    print("❌ Opción inválida. Intenta de nuevo.")
+                    print("Opción inválida. Intenta de nuevo.")
 
-                input("\n⏸️  Presiona Enter para continuar...")
+                input("\nPresiona Enter para continuar...")
 
         except KeyboardInterrupt:
-            print("\n\n👋 ¡Hasta luego!")
+            print("\n\n¡Hasta luego!")
         except Exception as e:
-            print(f"\n❌ Error inesperado: {e}")
+            print(f"\nError inesperado: {e}")
         finally:
             self.db_manager.disconnect()
-            print("🔐 Conexión cerrada")
+            print("Conexión cerrada")
 
 
 if __name__ == "__main__":

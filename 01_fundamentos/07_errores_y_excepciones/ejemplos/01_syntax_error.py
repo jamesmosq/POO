@@ -1,12 +1,21 @@
 #1.SyntaxError: Calculadora simple con error de sintaxis
 
-# Versión con error de sintaxis
+# Versión con error de sintaxis.
+# El error clásico es usar '=' (asignación) en lugar de '==' (comparación):
+#
+#     if operacion = "+":
+#                  ^
+# SyntaxError: invalid syntax. Maybe you meant '==' or ':=' instead of '='?
+#
+# La función de abajo ya tiene la comparación escrita correctamente para que el
+# archivo pueda ejecutarse. Cambia '==' por '=' en la primera condición y ejecuta
+# para ver el error.
 def calculadora_con_error():
     operacion = input("Ingrese la operación (+, -, *, /): ")
     num1 = float(input("Ingrese el primer número: "))
     num2 = float(input("Ingrese el segundo número: "))
 
-    if operacion == "+":  # Error de sintaxis: usa '=' en lugar de '=='
+    if operacion == "+":  # Aquí se comete el error si se escribe '='
         print(f"Resultado: {num1 + num2}")
     elif operacion == "-":
         print(f"Resultado: {num1 - num2}")

@@ -235,19 +235,19 @@ def main():
 
         # Probar conexión
         if db_manager.test_connection():
-            print("✅ Conexión exitosa con mysql-connector-python")
+            print("Conexión exitosa con mysql-connector-python")
         else:
             raise Exception("Test de conexión falló")
 
     except Exception as e:
-        print(f"❌ mysql-connector-python falló: {e}")
+        print(f"mysql-connector-python falló: {e}")
         print("Intentando con PyMySQL como alternativa...")
 
         try:
             db_manager = AlternativeDatabaseManager(config)
-            print("✅ Usando PyMySQL como alternativa")
+            print("Usando PyMySQL como alternativa")
         except Exception as e2:
-            print(f"❌ PyMySQL también falló: {e2}")
+            print(f"PyMySQL también falló: {e2}")
             print("\n=== SOLUCIONES RECOMENDADAS ===")
             print("1. Instalar PyMySQL: pip install PyMySQL")
             print("2. Actualizar mysql-connector-python: pip install --upgrade mysql-connector-python")
@@ -280,7 +280,7 @@ def main():
 
     except Exception as e:
         logger.error(f"Error en la aplicación: {e}")
-        print(f"❌ Ocurrió un error: {e}")
+        print(f"Ocurrió un error: {e}")
         print("Consulta los logs para más detalles.")
 
 

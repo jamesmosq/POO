@@ -2,7 +2,7 @@ from abc import ABC, abstractmethod
 import math
 
 # =============================================================================
-# 🎯 ¿QUÉ SON LOS MÉTODOS ABSTRACTOS?
+# ¿QUÉ SON LOS MÉTODOS ABSTRACTOS?
 # =============================================================================
 
 """
@@ -17,11 +17,11 @@ pero cada uno lo hará a su manera"
 """
 
 # =============================================================================
-# 📚 EJEMPLO 1: CONCEPTOS BÁSICOS - Animales
+# EJEMPLO 1: CONCEPTOS BÁSICOS - Animales
 # =============================================================================
 
 print("=" * 60)
-print("🐾 EJEMPLO 1: MÉTODOS ABSTRACTOS BÁSICOS")
+print("EJEMPLO 1: MÉTODOS ABSTRACTOS BÁSICOS")
 print("=" * 60)
 
 
@@ -32,7 +32,7 @@ class Animal(ABC):
 
     # MÉTODO CONCRETO (todos los animales tienen el mismo comportamiento)
     def dormir(self):
-        return f"{self.nombre} está durmiendo 😴"
+        return f"{self.nombre} está durmiendo"
 
     # MÉTODO ABSTRACTO (cada animal hace sonido diferente)
     @abstractmethod
@@ -49,18 +49,18 @@ class Animal(ABC):
 
 class Perro(Animal):
     def hacer_sonido(self):
-        return f"{self.nombre} dice: ¡Guau guau! 🐕"
+        return f"{self.nombre} dice: ¡Guau guau!"
 
     def moverse(self):
-        return f"{self.nombre} corre con sus cuatro patas 🏃‍♂️"
+        return f"{self.nombre} corre con sus cuatro patas"
 
 
 class Pez(Animal):
     def hacer_sonido(self):
-        return f"{self.nombre} hace burbujas: blub blub 🐠"
+        return f"{self.nombre} hace burbujas: blub blub"
 
     def moverse(self):
-        return f"{self.nombre} nada moviendo su cola 🏊‍♂️"
+        return f"{self.nombre} nada moviendo su cola"
 
 
 # Demostración
@@ -76,11 +76,11 @@ print(f"Método abstracto - {pez.hacer_sonido()}")
 print(f"Método abstracto - {pez.moverse()}")
 
 # =============================================================================
-# 🧮 EJEMPLO 2: MATEMÁTICAS - Figuras Geométricas
+# EJEMPLO 2: MATEMÁTICAS - Figuras Geométricas
 # =============================================================================
 
 print("\n" + "=" * 60)
-print("📐 EJEMPLO 2: MÉTODOS ABSTRACTOS EN MATEMÁTICAS")
+print("EJEMPLO 2: MÉTODOS ABSTRACTOS EN MATEMÁTICAS")
 print("=" * 60)
 
 
@@ -150,18 +150,18 @@ figuras = [
     Circulo(3, "verde")
 ]
 
-print("📊 CALCULANDO PROPIEDADES DE FIGURAS:")
+print("CALCULANDO PROPIEDADES DE FIGURAS:")
 for figura in figuras:
     print(f"\n{figura.describir()}")
     print(f"  Área: {figura.calcular_area()}")
     print(f"  Perímetro: {figura.calcular_perimetro()}")
 
 # =============================================================================
-# 💻 EJEMPLO 3: PROCESAMIENTO DE DATOS
+# EJEMPLO 3: PROCESAMIENTO DE DATOS
 # =============================================================================
 
 print("\n" + "=" * 60)
-print("💾 EJEMPLO 3: PROCESADORES DE ARCHIVOS")
+print("EJEMPLO 3: PROCESADORES DE ARCHIVOS")
 print("=" * 60)
 
 
@@ -199,14 +199,14 @@ class ProcesadorCSV(ProcesadorArchivo):
             ["Ana", "30", "Doctora"],
             ["Carlos", "28", "Profesor"]
         ]
-        return f"✅ CSV leído: {len(self.datos)} filas"
+        return f"CSV leído: {len(self.datos)} filas"
 
     def validar_datos(self):
         errores = []
         for i, fila in enumerate(self.datos):
             if len(fila) != 3:
                 errores.append(f"Fila {i + 1}: número incorrecto de columnas")
-        return "✅ Datos válidos" if not errores else f"❌ Errores: {errores}"
+        return "Datos válidos" if not errores else f"Errores: {errores}"
 
     def procesar_datos(self):
         resultado = []
@@ -217,7 +217,7 @@ class ProcesadorCSV(ProcesadorArchivo):
                 'profesion': fila[2]
             }
             resultado.append(persona)
-        return f"📊 Procesados {len(resultado)} registros de personas"
+        return f"Procesados {len(resultado)} registros de personas"
 
 
 class ProcesadorJSON(ProcesadorArchivo):
@@ -229,20 +229,20 @@ class ProcesadorJSON(ProcesadorArchivo):
                 {"id": 2, "nombre": "Mouse", "precio": 25}
             ]
         }
-        return f"✅ JSON leído: {len(self.datos['productos'])} productos"
+        return f"JSON leído: {len(self.datos['productos'])} productos"
 
     def validar_datos(self):
         productos = self.datos.get('productos', [])
         for producto in productos:
             required_fields = ['id', 'nombre', 'precio']
             if not all(field in producto for field in required_fields):
-                return "❌ Faltan campos requeridos en productos"
-        return "✅ Estructura JSON válida"
+                return "Faltan campos requeridos en productos"
+        return "Estructura JSON válida"
 
     def procesar_datos(self):
         productos = self.datos['productos']
         total_valor = sum(p['precio'] for p in productos)
-        return f"💰 Inventario procesado: ${total_valor} en {len(productos)} productos"
+        return f"Inventario procesado: ${total_valor} en {len(productos)} productos"
 
 
 # Demostración
@@ -251,19 +251,19 @@ procesadores = [
     ProcesadorJSON("inventario.json")
 ]
 
-print("🔄 PROCESANDO ARCHIVOS CON MÉTODOS ABSTRACTOS:")
+print("PROCESANDO ARCHIVOS CON MÉTODOS ABSTRACTOS:")
 for procesador in procesadores:
-    print(f"\n📁 {procesador.obtener_info_archivo()}")
+    print(f"\n{procesador.obtener_info_archivo()}")
     print(f"  1. {procesador.leer_archivo()}")
     print(f"  2. {procesador.validar_datos()}")
     print(f"  3. {procesador.procesar_datos()}")
 
 # =============================================================================
-# 🎮 EJEMPLO 4: SISTEMA DE JUEGO AVANZADO
+# EJEMPLO 4: SISTEMA DE JUEGO AVANZADO
 # =============================================================================
 
 print("\n" + "=" * 60)
-print("🎮 EJEMPLO 4: SISTEMA DE JUEGO CON MÚLTIPLES MÉTODOS ABSTRACTOS")
+print("EJEMPLO 4: SISTEMA DE JUEGO CON MÚLTIPLES MÉTODOS ABSTRACTOS")
 print("=" * 60)
 
 
@@ -280,12 +280,12 @@ class Personaje(ABC):
             self.nivel += 1
             self.experiencia = 0
             self.vida += 20
-            return f"🆙 {self.nombre} subió al nivel {self.nivel}!"
-        return f"📊 {self.nombre} necesita {100 - self.experiencia} EXP más"
+            return f"{self.nombre} subió al nivel {self.nivel}!"
+        return f"{self.nombre} necesita {100 - self.experiencia} EXP más"
 
     def recibir_daño(self, daño):
         self.vida = max(0, self.vida - daño)
-        return f"💔 {self.nombre} recibió {daño} de daño. Vida: {self.vida}"
+        return f"{self.nombre} recibió {daño} de daño. Vida: {self.vida}"
 
     # Métodos abstractos - cada clase los implementa diferente
     @abstractmethod
@@ -318,16 +318,16 @@ class Guerrero(Personaje):
     def atacar(self, objetivo):
         daño = self.calcular_daño_base()
         self.experiencia += 10
-        return f"⚔️ {self.nombre} ataca con espada causando {daño} de daño!"
+        return f"{self.nombre} ataca con espada causando {daño} de daño!"
 
     def defender(self):
         defensa = self.armadura + self.nivel * 2
-        return f"🛡️ {self.nombre} se defiende con escudo (+{defensa} defensa)"
+        return f"{self.nombre} se defiende con escudo (+{defensa} defensa)"
 
     def habilidad_especial(self):
         daño_especial = self.fuerza * 2
         self.experiencia += 20
-        return f"💥 {self.nombre} usa GOLPE DEVASTADOR ({daño_especial} daño)"
+        return f"{self.nombre} usa GOLPE DEVASTADOR ({daño_especial} daño)"
 
     def calcular_daño_base(self):
         return self.fuerza + self.nivel * 3
@@ -344,23 +344,23 @@ class Mago(Personaje):
             daño = self.calcular_daño_base()
             self.mana -= 10
             self.experiencia += 15
-            return f"🔥 {self.nombre} lanza bola de fuego ({daño} daño, mana: {self.mana})"
-        return f"💧 {self.nombre} no tiene suficiente mana"
+            return f"{self.nombre} lanza bola de fuego ({daño} daño, mana: {self.mana})"
+        return f"{self.nombre} no tiene suficiente mana"
 
     def defender(self):
         if self.mana >= 5:
             self.mana -= 5
             defensa = self.inteligencia
-            return f"✨ {self.nombre} crea escudo mágico (+{defensa} defensa)"
-        return f"💧 {self.nombre} no puede crear escudo (sin mana)"
+            return f"{self.nombre} crea escudo mágico (+{defensa} defensa)"
+        return f"{self.nombre} no puede crear escudo (sin mana)"
 
     def habilidad_especial(self):
         if self.mana >= 25:
             self.mana -= 25
             daño_especial = self.inteligencia * 3
             self.experiencia += 30
-            return f"⚡ {self.nombre} invoca TORMENTA ELÉCTRICA ({daño_especial} daño)"
-        return f"💧 {self.nombre} necesita más mana para la tormenta"
+            return f"{self.nombre} invoca TORMENTA ELÉCTRICA ({daño_especial} daño)"
+        return f"{self.nombre} necesita más mana para la tormenta"
 
     def calcular_daño_base(self):
         return self.inteligencia + self.nivel * 2
@@ -370,33 +370,33 @@ class Mago(Personaje):
 guerrero = Guerrero("Arthas")
 mago = Mago("Gandalf")
 
-print("⚔️ SIMULACIÓN DE COMBATE:")
-print(f"\n👥 Personajes:")
+print("SIMULACIÓN DE COMBATE:")
+print(f"\nPersonajes:")
 print(f"  {guerrero.nombre}: Vida={guerrero.vida}, Nivel={guerrero.nivel}")
 print(f"  {mago.nombre}: Vida={mago.vida}, Nivel={mago.nivel}, Mana={mago.mana}")
 
-print(f"\n🥊 Turno 1:")
+print(f"\nTurno 1:")
 print(f"  {guerrero.atacar(mago)}")
 print(f"  {mago.defender()}")
 
-print(f"\n🥊 Turno 2:")
+print(f"\nTurno 2:")
 print(f"  {mago.habilidad_especial()}")
 print(f"  {guerrero.defender()}")
 
-print(f"\n📊 Estado después del combate:")
+print(f"\nEstado después del combate:")
 print(f"  {guerrero.subir_nivel()}")
 print(f"  {mago.subir_nivel()}")
 
 # =============================================================================
-# 🎯 EJERCICIOS PARA PRACTICAR
+# EJERCICIOS PARA PRACTICAR
 # =============================================================================
 
 print("\n" + "=" * 60)
-print("📝 EJERCICIOS PARA PRACTICAR MÉTODOS ABSTRACTOS")
+print("EJERCICIOS PARA PRACTICAR MÉTODOS ABSTRACTOS")
 print("=" * 60)
 
 ejercicios = """
-🎯 EJERCICIO 1: Sistema de Notificaciones
+EJERCICIO 1: Sistema de Notificaciones
 Crea una clase abstracta 'Notificacion' con métodos abstractos:
 - enviar()
 - validar_destinatario()
@@ -404,7 +404,7 @@ Crea una clase abstracta 'Notificacion' con métodos abstractos:
 
 Implementa: NotificacionEmail, NotificacionSMS, NotificacionPush
 
-🎯 EJERCICIO 2: Calculadora de Impuestos
+EJERCICIO 2: Calculadora de Impuestos
 Crea una clase abstracta 'CalculadoraImpuestos' con métodos abstractos:
 - calcular_impuesto_base()
 - aplicar_deducciones()
@@ -412,7 +412,7 @@ Crea una clase abstracta 'CalculadoraImpuestos' con métodos abstractos:
 
 Implementa: ImpuestoPersonaFisica, ImpuestoEmpresa
 
-🎯 EJERCICIO 3: Reproductores de Media
+EJERCICIO 3: Reproductores de Media
 Crea una clase abstracta 'ReproductorMedia' con métodos abstractos:
 - reproducir()
 - pausar()
@@ -421,7 +421,7 @@ Crea una clase abstracta 'ReproductorMedia' con métodos abstractos:
 
 Implementa: ReproductorVideo, ReproductorAudio, ReproductorStreaming
 
-🎯 EJERCICIO 4: Sistema de Autenticación
+EJERCICIO 4: Sistema de Autenticación
 Crea una clase abstracta 'MetodoAutenticacion' con métodos abstractos:
 - validar_credenciales()
 - generar_token()
@@ -433,31 +433,31 @@ Implementa: AutenticacionPassword, AutenticacionBiometrica, AutenticacionDosFact
 print(ejercicios)
 
 # =============================================================================
-# 🔑 CONSEJOS CLAVE
+# CONSEJOS CLAVE
 # =============================================================================
 
 print("\n" + "=" * 60)
-print("💡 CONSEJOS PARA USAR MÉTODOS ABSTRACTOS EFECTIVAMENTE")
+print("CONSEJOS PARA USAR MÉTODOS ABSTRACTOS EFECTIVAMENTE")
 print("=" * 60)
 
 consejos = """
-✅ CUÁNDO USAR MÉTODOS ABSTRACTOS:
+CUÁNDO USAR MÉTODOS ABSTRACTOS:
 1. Cuando TODAS las subclases deben tener un comportamiento, pero cada una lo hace diferente
 2. Para garantizar que ninguna subclase olvide implementar métodos críticos
 3. Cuando quieres definir una "interfaz común" pero con implementaciones variables
 
-❌ CUÁNDO NO USARLOS:
+CUÁNDO NO USARLOS:
 1. Si el comportamiento es exactamente igual en todas las subclases
 2. Si solo algunas subclases necesitan el método
 3. Si el método es opcional
 
-🎯 MEJORES PRÁCTICAS:
+MEJORES PRÁCTICAS:
 1. Usa nombres descriptivos que indiquen QUÉ hace el método
 2. Incluye docstrings explicando qué debe hacer cada implementación
 3. Combina métodos abstractos con métodos concretos
 4. No abuses: solo los métodos realmente necesarios deben ser abstractos
 
-🔍 CÓMO IDENTIFICAR QUÉ DEBE SER ABSTRACTO:
+CÓMO IDENTIFICAR QUÉ DEBE SER ABSTRACTO:
 - Pregúntate: "¿TODAS mis subclases van a hacer esto, pero de manera diferente?"
 - Si la respuesta es SÍ → método abstracto
 - Si la respuesta es NO → método concreto o no incluir
@@ -465,4 +465,4 @@ consejos = """
 
 print(consejos)
 
-print("\n🎉 ¡Ahora tienes las herramientas para usar métodos abstractos como un profesional!")
+print("\n¡Ahora tienes las herramientas para usar métodos abstractos como un profesional!")

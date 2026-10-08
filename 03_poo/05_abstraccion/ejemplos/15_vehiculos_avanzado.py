@@ -264,7 +264,7 @@ class SimuladorViaje:
         POLIMORFISMO: Usa el mismo método calcular_consumo_combustible()
         sin conocer el tipo específico de cada vehículo
         """
-        print(f"\n🚗 SIMULADOR DE VIAJE - DISTANCIA: {distancia} km 🚗")
+        print(f"\nSIMULADOR DE VIAJE - DISTANCIA: {distancia} km")
         print("=" * 70)
 
         resultados = []
@@ -312,17 +312,17 @@ class SimuladorViaje:
 
     def _mostrar_analisis_comparativo(self, resultados, distancia):
         """Muestra análisis comparativo de la simulación"""
-        print(f"\n📊 ANÁLISIS COMPARATIVO - {distancia} km")
+        print(f"\nANÁLISIS COMPARATIVO - {distancia} km")
         print("=" * 70)
 
         # Ordenar por eficiencia (menor consumo es mejor)
         resultados_ordenados = sorted(resultados, key=lambda x: x['consumo_litros'])
 
-        print("\n🏆 RANKING DE EFICIENCIA:")
+        print("\nRANKING DE EFICIENCIA:")
         for i, resultado in enumerate(resultados_ordenados, 1):
             print(f"{i}. {resultado['vehiculo']} - {resultado['eficiencia']}")
 
-        print(f"\n💰 RANKING DE COSTO:")
+        print(f"\nRANKING DE COSTO:")
         resultados_por_costo = sorted(resultados, key=lambda x: x['costo'])
         for i, resultado in enumerate(resultados_por_costo, 1):
             print(f"{i}. {resultado['vehiculo']} - ${resultado['costo']}")
@@ -332,7 +332,7 @@ class SimuladorViaje:
         total_costo = sum(r['costo'] for r in resultados)
         promedio_consumo = total_consumo / len(resultados)
 
-        print(f"\n📈 ESTADÍSTICAS GENERALES:")
+        print(f"\nESTADÍSTICAS GENERALES:")
         print(f"Consumo total: {total_consumo:.2f} litros")
         print(f"Costo total: ${total_costo:.2f}")
         print(f"Consumo promedio: {promedio_consumo:.2f} litros")
@@ -340,7 +340,7 @@ class SimuladorViaje:
 
     def simular_manejo_dinamico(self, vehiculo, distancia_segmentos):
         """Simula manejo dinámico con aceleración y frenado"""
-        print(f"\n🎮 SIMULACIÓN DINÁMICA: {vehiculo}")
+        print(f"\nSIMULACIÓN DINÁMICA: {vehiculo}")
         print("=" * 50)
 
         for i, distancia in enumerate(distancia_segmentos, 1):
@@ -364,7 +364,7 @@ class SimuladorViaje:
 
 # DEMOSTRACIÓN COMPLETA
 def main():
-    print("🚗🏍️🚛 SISTEMA DE VEHÍCULOS CON POLIMORFISMO 🚗🏍️🚛")
+    print("SISTEMA DE VEHÍCULOS CON POLIMORFISMO")
     print("=" * 80)
 
     # Crear simulador
@@ -401,7 +401,7 @@ def main():
         print("\n" + "=" * 80)
 
     # Demostración de manejo dinámico
-    print("\n🎮 DEMOSTRACIÓN DE MANEJO DINÁMICO")
+    print("\nDEMOSTRACIÓN DE MANEJO DINÁMICO")
     print("=" * 80)
 
     vehiculo_prueba = vehiculos[0]  # Toyota Corolla
@@ -409,7 +409,7 @@ def main():
     simulador.simular_manejo_dinamico(vehiculo_prueba, segmentos)
 
     # Mostrar polimorfismo explícitamente
-    print(f"\n🔄 DEMOSTRACIÓN EXPLÍCITA DE POLIMORFISMO")
+    print(f"\nDEMOSTRACIÓN EXPLÍCITA DE POLIMORFISMO")
     print("=" * 80)
     print("El mismo método 'calcular_consumo_combustible()' funciona diferente:")
 

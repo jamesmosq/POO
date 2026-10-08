@@ -79,11 +79,11 @@ class EmployeeUpdater:
         employee = self.get_employee_by_id(employee_id)
 
         if not employee:
-            print(f"❌ No se encontró empleado con ID: {employee_id}")
+            print(f"No se encontró empleado con ID: {employee_id}")
             return False
 
         # Mostrar información actual
-        print("📋 Información actual del empleado:")
+        print("Información actual del empleado:")
         print("-" * 40)
         self.show_employee_info(employee)
 
@@ -112,7 +112,7 @@ class EmployeeUpdater:
             update_values.append(notes)
 
         if not update_fields:
-            print("⚠️ No se proporcionaron campos para actualizar")
+            print("No se proporcionaron campos para actualizar")
             return False
 
         # Agregar el ID al final para la condición WHERE
@@ -125,16 +125,16 @@ class EmployeeUpdater:
         rows_affected = self.db_manager.execute_query(update_query, tuple(update_values))
 
         if rows_affected > 0:
-            print(f"\n✅ Empleado con ID {employee_id} actualizado correctamente")
+            print(f"\nEmpleado con ID {employee_id} actualizado correctamente")
 
             # Mostrar información actualizada
             updated_employee = self.get_employee_by_id(employee_id)
-            print("\n📋 Información actualizada:")
+            print("\nInformación actualizada:")
             print("-" * 40)
             self.show_employee_info(updated_employee)
             return True
         else:
-            print(f"❌ No se pudo actualizar el empleado con ID {employee_id}")
+            print(f"No se pudo actualizar el empleado con ID {employee_id}")
             return False
 
 

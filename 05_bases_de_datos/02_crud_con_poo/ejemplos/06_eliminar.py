@@ -68,22 +68,22 @@ class EmployeeDeleter:
         employee = self.get_employee_by_id(employee_id)
 
         if not employee:
-            print(f"❌ No se encontró empleado con ID: {employee_id}")
+            print(f"No se encontró empleado con ID: {employee_id}")
             return False
 
         # Mostrar información del empleado a eliminar
         emp_data = employee[0]
-        print(f"📋 Empleado a eliminar: ID {emp_data[0]} - {emp_data[2]} {emp_data[1]}")
+        print(f"Empleado a eliminar: ID {emp_data[0]} - {emp_data[2]} {emp_data[1]}")
 
         # Ejecutar eliminación
         delete_query = "DELETE FROM Employees WHERE EmployeeID = %s"
         rows_affected = self.db_manager.execute_query(delete_query, (employee_id,))
 
         if rows_affected > 0:
-            print(f"✅ Empleado con ID {employee_id} eliminado correctamente")
+            print(f"Empleado con ID {employee_id} eliminado correctamente")
             return True
         else:
-            print(f"❌ No se pudo eliminar el empleado con ID {employee_id}")
+            print(f"No se pudo eliminar el empleado con ID {employee_id}")
             return False
 
 

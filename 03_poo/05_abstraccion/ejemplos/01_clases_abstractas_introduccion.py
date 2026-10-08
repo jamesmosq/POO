@@ -22,7 +22,7 @@ class Animal(ABC):
 
     # Método concreto - puede ser usado directamente
     def dormir(self):
-        print(f"{self.nombre} está durmiendo... 😴")
+        print(f"{self.nombre} está durmiendo...")
 
 
 # Subclases que implementan los métodos abstractos
@@ -335,4 +335,4 @@ try:
 except TypeError as e:
     print(f"ERROR al crear clase incompleta: {e}")
 
-print("\n¡Los ejemplos funcionan correctamente! ✅")
+print("\n¡Los ejemplos funcionan correctamente!")

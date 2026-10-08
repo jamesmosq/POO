@@ -3,7 +3,7 @@ from abc import ABC, abstractmethod
 import math
 
 print("\n" + "=" * 60)
-print("💾 EJEMPLO 3: PROCESADORES DE ARCHIVOS")
+print("EJEMPLO 3: PROCESADORES DE ARCHIVOS")
 print("=" * 60)
 
 
@@ -41,14 +41,14 @@ class ProcesadorCSV(ProcesadorArchivo):
             ["Ana", "30", "Doctora"],
             ["Carlos", "28", "Profesor"]
         ]
-        return f"✅ CSV leído: {len(self.datos)} filas"
+        return f"CSV leído: {len(self.datos)} filas"
 
     def validar_datos(self):
         errores = []
         for i, fila in enumerate(self.datos):
             if len(fila) != 3:
                 errores.append(f"Fila {i + 1}: número incorrecto de columnas")
-        return "✅ Datos válidos" if not errores else f"❌ Errores: {errores}"
+        return "Datos válidos" if not errores else f"Errores: {errores}"
 
     def procesar_datos(self):
         resultado = []
@@ -59,7 +59,7 @@ class ProcesadorCSV(ProcesadorArchivo):
                 'profesion': fila[2]
             }
             resultado.append(persona)
-        return f"📊 Procesados {len(resultado)} registros de personas"
+        return f"Procesados {len(resultado)} registros de personas"
 
 
 class ProcesadorJSON(ProcesadorArchivo):
@@ -71,20 +71,20 @@ class ProcesadorJSON(ProcesadorArchivo):
                 {"id": 2, "nombre": "Mouse", "precio": 25}
             ]
         }
-        return f"✅ JSON leído: {len(self.datos['productos'])} productos"
+        return f"JSON leído: {len(self.datos['productos'])} productos"
 
     def validar_datos(self):
         productos = self.datos.get('productos', [])
         for producto in productos:
             required_fields = ['id', 'nombre', 'precio']
             if not all(field in producto for field in required_fields):
-                return "❌ Faltan campos requeridos en productos"
-        return "✅ Estructura JSON válida"
+                return "Faltan campos requeridos en productos"
+        return "Estructura JSON válida"
 
     def procesar_datos(self):
         productos = self.datos['productos']
         total_valor = sum(p['precio'] for p in productos)
-        return f"💰 Inventario procesado: ${total_valor} en {len(productos)} productos"
+        return f"Inventario procesado: ${total_valor} en {len(productos)} productos"
 
 
 # Demostración
@@ -93,9 +93,9 @@ procesadores = [
     ProcesadorJSON("inventario.json")
 ]
 
-print("🔄 PROCESANDO ARCHIVOS CON MÉTODOS ABSTRACTOS:")
+print("PROCESANDO ARCHIVOS CON MÉTODOS ABSTRACTOS:")
 for procesador in procesadores:
-    print(f"\n📁 {procesador.obtener_info_archivo()}")
+    print(f"\n{procesador.obtener_info_archivo()}")
     print(f"  1. {procesador.leer_archivo()}")
     print(f"  2. {procesador.validar_datos()}")
     print(f"  3. {procesador.procesar_datos()}")

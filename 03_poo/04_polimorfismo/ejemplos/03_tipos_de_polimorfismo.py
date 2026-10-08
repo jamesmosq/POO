@@ -150,23 +150,23 @@ print("-" * 50)
 
 
 # ===========================================
-#  PRÁCTICANDO 🫡 COMBINADO
+#  PRÁCTICANDO COMBINADO
 # ===========================================
 
 # Sistema de notificaciones usando duck typing
 class EmailNotificador:
     def enviar(self, mensaje):
-        return f"📧 Email: {mensaje}"
+        return f"Email: {mensaje}"
 
 
 class SMSNotificador:
     def enviar(self, mensaje):
-        return f"📱 SMS: {mensaje}"
+        return f"SMS: {mensaje}"
 
 
 class PushNotificador:
     def enviar(self, mensaje):
-        return f"🔔 Push: {mensaje}"
+        return f"Push: {mensaje}"
 
 
 class SistemaNotificaciones:
@@ -188,5 +188,3 @@ sistema.agregar_notificador(SMSNotificador())
 sistema.agregar_notificador(PushNotificador())
 
 sistema.notificar_todos("¡Nueva actualización disponible!")
-# para agregar emojis a los mensajes en windows: usa la teclca de windows + punto (.) y selecciona el emoji que quieras
-# Para agregar emojis a los mensajes en linux: esos no me los sé ☹️

@@ -44,7 +44,7 @@ class NotificacionApp(Notificacion):
 
     def enviar(self):
         print(f"NOTIFICACIÓN PUSH para dispositivo {self.id_dispositivo}:")
-        print(f"🔔 Banco XYZ - Nuevo movimiento")
+        print(f"Banco XYZ - Nuevo movimiento")
         print(f"Pago de ${self.monto} realizado")
         print(f"Comercio: {self.comercio}")
         print("----------------------------------")

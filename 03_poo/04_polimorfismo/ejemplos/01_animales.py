@@ -22,15 +22,15 @@ print("-" * 50)
 
 class Vehiculo:
     def arrancar(self):
-        return "🚙 El vehículo arranca"
+        return "El vehículo arranca"
 
 class Coche(Vehiculo):
     def arrancar(self):
-        return "🚗 El coche arranca con llave"
+        return "El coche arranca con llave"
 
 class Moto(Vehiculo):
     def arrancar(self):
-        return "🏍️ La moto arranca con botón"
+        return "La moto arranca con botón"
 
 # Uso polimórfico
 vehiculos = [Coche(), Moto()]

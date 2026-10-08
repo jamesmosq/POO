@@ -9,16 +9,7 @@ division = num1 / num2
 print("Suma:", suma)
 print("Resta:", restando)
 print("Multiplicación:", multiplicacion)
-print(f"División:, {division}")
-
-"""
-iou qioefwiohpqefwoiphioqerwioqewirqefwiefwqpfwiofqewiqefwihoqfewioihpoqefw
-"""
-#gyfgjkhasjDSKADSKJAHDSJ
-
-
-
-
+print(f"División: {division}")
 
 nombre = "Juanito"
 print(nombre)

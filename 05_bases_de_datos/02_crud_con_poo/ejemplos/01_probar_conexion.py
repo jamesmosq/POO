@@ -30,23 +30,23 @@ class DatabaseManager:
             )
 
             if self.connection.is_connected():
-                print("✅ Conexión exitosa a la base de datos")
+                print("Conexión exitosa a la base de datos")
 
                 # Información adicional de la conexión
                 db_info = self.connection.get_server_info()
-                print(f"📊 Versión del servidor MySQL: {db_info}")
-                print(f"🏢 Base de datos conectada: {self.database}")
+                print(f"Versión del servidor MySQL: {db_info}")
+                print(f"Base de datos conectada: {self.database}")
 
                 return True
             else:
-                print("❌ No se pudo establecer la conexión")
+                print("No se pudo establecer la conexión")
                 return False
 
         except mysql.connector.Error as error:
-            print(f"❌ Error de conexión MySQL: {error}")
+            print(f"Error de conexión MySQL: {error}")
             return False
         except Exception as e:
-            print(f"❌ Error inesperado: {e}")
+            print(f"Error inesperado: {e}")
             return False
 
     def test_connection(self):
@@ -57,7 +57,7 @@ class DatabaseManager:
             bool: True si la prueba es exitosa
         """
         if not self.connection or not self.connection.is_connected():
-            print("⚠️ No hay conexión activa")
+            print("No hay conexión activa")
             return False
 
         try:
@@ -67,17 +67,17 @@ class DatabaseManager:
             cursor.close()
 
             if result and result[0] == 1:
-                print("✅ Test de conexión exitoso")
+                print("Test de conexión exitoso")
                 return True
             else:
-                print("❌ Test de conexión falló")
+                print("Test de conexión falló")
                 return False
 
         except mysql.connector.Error as error:
-            print(f"❌ Error en test de conexión: {error}")
+            print(f"Error en test de conexión: {error}")
             return False
         except Exception as e:
-            print(f"❌ Error inesperado en test: {e}")
+            print(f"Error inesperado en test: {e}")
             return False
 
     def disconnect(self):
@@ -87,26 +87,26 @@ class DatabaseManager:
         try:
             if self.connection and self.connection.is_connected():
                 self.connection.close()
-                print("✅ Conexión cerrada correctamente")
+                print("Conexión cerrada correctamente")
             else:
-                print("⚠️ No hay conexión activa para cerrar")
+                print("No hay conexión activa para cerrar")
 
         except mysql.connector.Error as error:
-            print(f"❌ Error al cerrar conexión: {error}")
+            print(f"Error al cerrar conexión: {error}")
         except Exception as e:
-            print(f"❌ Error inesperado al cerrar: {e}")
+            print(f"Error inesperado al cerrar: {e}")
 
     def get_connection_status(self):
         """
         Muestra el estado actual de la conexión
         """
         if self.connection and self.connection.is_connected():
-            print("🟢 Estado: CONECTADO")
-            print(f"🏢 Host: {self.host}")
-            print(f"👤 Usuario: {self.user}")
-            print(f"🗃️ Base de datos: {self.database}")
+            print("Estado: CONECTADO")
+            print(f"Host: {self.host}")
+            print(f"Usuario: {self.user}")
+            print(f"Base de datos: {self.database}")
         else:
-            print("🔴 Estado: DESCONECTADO")
+            print("Estado: DESCONECTADO")
 
 
 def main():
@@ -125,16 +125,16 @@ def main():
     db_manager = DatabaseManager(HOST, USER, PASSWORD, DATABASE)
 
     try:
-        print("🔄 Intentando conectar a la base de datos...")
-        print(f"📡 Host: {HOST}")
-        print(f"👤 Usuario: {USER}")
-        print(f"🗃️ Base de datos: {DATABASE}")
+        print("Intentando conectar a la base de datos...")
+        print(f"Host: {HOST}")
+        print(f"Usuario: {USER}")
+        print(f"Base de datos: {DATABASE}")
 
         print("-" * 50)
 
         # Intentar conectar
         if db_manager.connect():
-            print("\n🎉 ¡Conexión establecida exitosamente!")
+            print("\n¡Conexión establecida exitosamente!")
 
             # Mostrar estado de la conexión
             print("\n--- Estado de la Conexión ---")
@@ -145,17 +145,17 @@ def main():
             db_manager.test_connection()
 
         else:
-            print("\n💥 No se pudo establecer la conexión")
-            print("\n🔧 Posibles soluciones:")
+            print("\nNo se pudo establecer la conexión")
+            print("\nPosibles soluciones:")
             print("   1. Verificar que MySQL esté ejecutándose")
             print("   2. Comprobar usuario y contraseña")
             print("   3. Verificar que la base de datos existe")
             print("   4. Revisar permisos del usuario")
 
     except KeyboardInterrupt:
-        print("\n\n⏹️ Operación cancelada por el usuario")
+        print("\n\nOperación cancelada por el usuario")
     except Exception as e:
-        print(f"\n💥 Error inesperado: {e}")
+        print(f"\nError inesperado: {e}")
     finally:
         # Siempre intentar cerrar la conexión
         print("\n--- Cerrando Conexión ---")
@@ -178,8 +178,8 @@ def main_with_env():
     DATABASE = os.getenv('DB_NAME', 'northwind')
 
     if not PASSWORD:
-        print("⚠️ Advertencia: No se encontró la variable DB_PASSWORD")
-        print("💡 Para usar este método, configura las variables de entorno:")
+        print("Advertencia: No se encontró la variable DB_PASSWORD")
+        print("Para usar este método, configura las variables de entorno:")
         print("   export DB_HOST=localhost")
         print("   export DB_USER=root")
         print("   export DB_PASSWORD=tu_password")
@@ -188,9 +188,9 @@ def main_with_env():
 
     db_manager = DatabaseManager(HOST, USER, PASSWORD, DATABASE)
 
-    print("🔐 Usando configuración desde variables de entorno")
+    print("Usando configuración desde variables de entorno")
     if db_manager.connect():
-        print("✅ Conexión exitosa con variables de entorno")
+        print("Conexión exitosa con variables de entorno")
         db_manager.test_connection()
 
     db_manager.disconnect()

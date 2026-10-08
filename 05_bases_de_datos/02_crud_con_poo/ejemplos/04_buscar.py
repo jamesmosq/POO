@@ -107,12 +107,12 @@ class EmployeeSearcher:
         """Muestra los resultados de búsqueda en formato tabla"""
         if results:
             columns = self.db_manager.fetch_columns()
-            print(f"\n🔍 {search_description}")
-            print(f"📊 Resultados encontrados: {len(results)}")
+            print(f"\n{search_description}")
+            print(f"Resultados encontrados: {len(results)}")
             print("-" * 60)
             print(tabulate(results, headers=columns, tablefmt='grid'))
         else:
-            print(f"\n❌ {search_description}")
+            print(f"\n{search_description}")
             print("No se encontraron resultados.")
 
 # Configuración de la conexión

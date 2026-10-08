@@ -3,9 +3,12 @@ import os
 from datetime import datetime, timedelta
 
 # Configuración de archivos de datos
-RUTA_LIBROS = 'libros.json'
-RUTA_USUARIOS = 'usuarios.json'
-RUTA_PRESTAMOS = 'prestamos.json'
+# Las rutas se calculan a partir de la carpeta de este archivo para que el
+# programa funcione sin importar desde dónde se ejecute.
+CARPETA = os.path.dirname(os.path.abspath(__file__))
+RUTA_LIBROS = os.path.join(CARPETA, 'libros.json')
+RUTA_USUARIOS = os.path.join(CARPETA, 'usuarios.json')
+RUTA_PRESTAMOS = os.path.join(CARPETA, 'prestamos.json')
 
 
 class SistemaBiblioteca:

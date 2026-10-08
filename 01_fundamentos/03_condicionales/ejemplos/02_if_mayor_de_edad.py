@@ -1,4 +1,4 @@
-edad =+9
+edad = 9
 if edad >= 18:
     print("Eres mayor de edad")
 else:

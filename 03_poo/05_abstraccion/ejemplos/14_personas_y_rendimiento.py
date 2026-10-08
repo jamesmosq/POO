@@ -122,7 +122,7 @@ def mostrar_evaluacion(estudiante):
 
 # DEMOSTRACIÓN DEL POLIMORFISMO
 def main():
-    print("🎓 SISTEMA DE EVALUACIÓN DE ESTUDIANTES 🎓")
+    print("SISTEMA DE EVALUACIÓN DE ESTUDIANTES")
     print("Demostración de Polimorfismo en Python")
 
     # Crear lista con diferentes tipos de estudiantes
@@ -146,7 +146,7 @@ def main():
 
     # Estadísticas generales
     print(f"\n{'=' * 60}")
-    print("📊 ESTADÍSTICAS GENERALES")
+    print("ESTADÍSTICAS GENERALES")
     print(f"{'=' * 60}")
 
     total = len(estudiantes)

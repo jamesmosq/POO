@@ -57,10 +57,10 @@ class Employee:
         employee_id = db_manager.execute_query(insert_query, employee_data)
 
         if employee_id:
-            print(f"✅ Nuevo empleado insertado correctamente con ID: {employee_id}")
+            print(f"Nuevo empleado insertado correctamente con ID: {employee_id}")
             return employee_id
         else:
-            print("❌ Error al insertar empleado")
+            print("Error al insertar empleado")
             return None
 
 

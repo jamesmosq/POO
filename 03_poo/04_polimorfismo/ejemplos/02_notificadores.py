@@ -1,16 +1,16 @@
 class EmailNotificador:
     def enviar(self, mensaje):
-        return f"📧 Email: {mensaje} 🥶"
+        return f"Email: {mensaje}"
 
 
 class SMSNotificador:
     def enviar(self, mensaje):
-        return f"📱 SMS: {mensaje}"
+        return f"SMS: {mensaje}"
 
 
 class PushNotificador:
     def enviar(self, mensaje):
-        return f"🔔 Push: {mensaje}"
+        return f"Push: {mensaje}"
 
 
 class SistemaNotificaciones:
