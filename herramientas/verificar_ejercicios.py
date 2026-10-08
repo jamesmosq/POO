@@ -57,7 +57,9 @@ def verificar_tema(tema):
     revisados = 0
     for tipo, carpeta_sol in (("ejercicios_propuestos", "propuestos"),
                               ("ejercicios_para_corregir", "para_corregir")):
-        for ejercicio in sorted((tema / tipo).glob("*.py")):
+        # Solo son ejercicios los archivos numerados (01_..., 02_...); los demás
+        # son módulos auxiliares que los ejercicios importan.
+        for ejercicio in sorted((tema / tipo).glob("[0-9][0-9]_*.py")):
             solucion = tema / "soluciones" / carpeta_sol / ejercicio.name
             nombre = ejercicio.relative_to(RAIZ)
             if not solucion.exists():
