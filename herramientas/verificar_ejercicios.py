@@ -26,7 +26,9 @@ TIEMPO_MAXIMO = 20
 
 
 def ejecutar(archivo):
-    entorno = dict(os.environ, PYTHONIOENCODING="utf-8")
+    # VERIFICAR_SIN_VENTANA evita que los ejercicios de interfaces gráficas
+    # abran la ventana real después de pasar las pruebas.
+    entorno = dict(os.environ, PYTHONIOENCODING="utf-8", VERIFICAR_SIN_VENTANA="1")
     try:
         r = subprocess.run(
             [sys.executable, archivo.name],
