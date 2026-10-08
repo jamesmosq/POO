@@ -37,7 +37,7 @@ Cada ejercicio tiene al inicio un diccionario `CONFIG`:
 CONFIG = {
     "host": os.getenv("DB_HOST", "localhost"),
     "user": os.getenv("DB_USER", "root"),
-    "password": os.getenv("DB_PASSWORD", ""),
+    "password": os.getenv("DB_PASSWORD", "base1234"),
     "database": os.getenv("DB_NAME", "northwind"),
 }
 ```
@@ -53,8 +53,10 @@ Tienes dos opciones:
 
 ## 3. Instalar los paquetes
 
+Desde la raíz de la repo, con el entorno virtual activado:
+
 ```
-pip install mysql-connector-python bcrypt
+pip install -r requirements.txt
 ```
 
 Los ejercicios funcionan con versiones antiguas y nuevas del conector,

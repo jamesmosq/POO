@@ -1,0 +1,17 @@
+# Paquetes que usa el curso. Instalar con:
+#     pip install -r requirements.txt
+
+# Bases de datos (bloque 05)
+mysql-connector-python
+bcrypt
+tabulate
+
+# Interfaces gráficas (bloques 04 y 05)
+tkcalendar
+Pillow
+
+# Otros ejemplos
+numpy
+requests
+prettytable
+pymysql

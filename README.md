@@ -71,8 +71,16 @@ Reglas:
 ## Requisitos
 
 - Python 3.10 o superior (se usa `match-case`).
-- Para el bloque 05: MySQL o MariaDB con la base Northwind, y los paquetes
-  `mysql-connector-python` y `bcrypt`. Ver `05_bases_de_datos/README.md`.
+- Los paquetes del curso, instalados en un entorno virtual:
+
+  ```
+  python -m venv .venv
+  .venv\Scripts\activate          (en Linux o macOS: source .venv/bin/activate)
+  pip install -r requirements.txt
+  ```
+
+- Para el bloque 05: MySQL o MariaDB con la base Northwind. Ver
+  `05_bases_de_datos/README.md`.
 
 ## Para el docente: verificar los ejercicios
 
