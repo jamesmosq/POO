@@ -1,0 +1,15 @@
+# Entornos e IDE
+.venv/
+venv/
+.idea/
+.vscode/
+
+# Python
+__pycache__/
+*.py[cod]
+
+# Bases de datos locales y configuracion privada
+*.sqlite
+*.db
+.env
+config_local.py
