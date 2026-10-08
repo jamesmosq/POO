@@ -22,9 +22,10 @@ soluciones.
 | **03 Programación orientada a objetos** | `01_clases_y_objetos` | Intermedio |
 | | `02_encapsulamiento` | Intermedio |
 | | `03_herencia` | Intermedio |
-| | `04_polimorfismo` | Intermedio |
-| | `05_abstraccion` | Intermedio a avanzado |
-| | `06_metodos_magicos` | Avanzado |
+| | `04_herencia_multiple` | Intermedio a avanzado |
+| | `05_polimorfismo` | Intermedio |
+| | `06_abstraccion` | Intermedio a avanzado |
+| | `07_metodos_magicos` | Avanzado |
 | **04 Interfaces gráficas (Tkinter)** | `01_ventanas_y_widgets` | Intermedio |
 | | `02_gestores_de_geometria` | Intermedio |
 | | `03_gui_con_poo` | Avanzado |

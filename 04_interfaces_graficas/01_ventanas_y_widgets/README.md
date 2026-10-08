@@ -1,7 +1,7 @@
 # Ventanas y widgets (Tkinter)
 
 **Nivel:** intermedio
-**Antes de este tema:** `03_poo/06_metodos_magicos`
+**Antes de este tema:** `03_poo/07_metodos_magicos`
 **Después de este tema:** `04_interfaces_graficas/02_gestores_de_geometria`
 
 ## Objetivos

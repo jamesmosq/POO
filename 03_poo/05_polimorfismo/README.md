@@ -1,8 +1,8 @@
 # Polimorfismo
 
 **Nivel:** intermedio
-**Antes de este tema:** `03_poo/03_herencia`
-**Después de este tema:** `03_poo/05_abstraccion`
+**Antes de este tema:** `03_poo/04_herencia_multiple`
+**Después de este tema:** `03_poo/06_abstraccion`
 
 ## Objetivos
 

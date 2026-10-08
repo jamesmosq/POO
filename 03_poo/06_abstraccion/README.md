@@ -1,8 +1,8 @@
 # Abstracción
 
 **Nivel:** intermedio a avanzado
-**Antes de este tema:** `03_poo/04_polimorfismo`
-**Después de este tema:** `03_poo/06_metodos_magicos`
+**Antes de este tema:** `03_poo/05_polimorfismo`
+**Después de este tema:** `03_poo/07_metodos_magicos`
 
 ## Objetivos
 

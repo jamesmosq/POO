@@ -1,7 +1,7 @@
 # Métodos mágicos
 
 **Nivel:** avanzado
-**Antes de este tema:** `03_poo/05_abstraccion`
+**Antes de este tema:** `03_poo/06_abstraccion`
 **Después de este tema:** `04_interfaces_graficas/01_ventanas_y_widgets`
 
 ## Objetivos
