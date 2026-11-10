@@ -5,6 +5,7 @@
 mysql-connector-python
 bcrypt
 tabulate
+pymongo                 # tema 06_crud_nosql (trae bson; no instalar "bson" aparte)
 
 # Interfaces gráficas (bloques 04 y 05)
 tkcalendar

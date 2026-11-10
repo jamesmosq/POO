@@ -1,10 +1,12 @@
-# Bases de datos con Python (Northwind)
+# Bases de datos con Python (Northwind y MongoDB)
 
 **Nivel:** avanzado
 **Antes de este bloque:** `04_interfaces_graficas`
 
-Todo el bloque trabaja con la base de datos de ejemplo **Northwind** en
-MySQL o MariaDB.
+Los temas 01 a 05 trabajan con la base de datos de ejemplo **Northwind** en
+MySQL o MariaDB. El tema 06 cambia a **MongoDB** (NoSQL) y tiene su propia
+guía de instalación en `06_crud_nosql/README.md`; los pasos 1 a 3 de abajo
+son solo para MySQL.
 
 ## 1. Preparar la base de datos
 
@@ -78,6 +80,7 @@ pip install mysql-connector-python
 | `03_procedimientos_almacenados` | `callproc`, parámetros OUT, `SIGNAL` | Avanzado |
 | `04_crud_con_interfaz` | Tkinter + MySQL: listas, filtros, CRUD, maestro-detalle | Avanzado |
 | `05_seguridad_de_contrasenas` | bcrypt, inicio de sesión, inyección SQL | Avanzado |
+| `06_crud_nosql` | MongoDB con `pymongo`: CRUD paso a paso, filtros, repositorio y CRUD con Tkinter | Avanzado |
 
 ## Qué modifican los ejercicios en tu base de datos
 
@@ -88,5 +91,8 @@ Los ejercicios que escriben datos limpian lo que crean, aunque fallen:
 - Procedimientos almacenados con prefijo `ej_` (quedan creados; se pueden
   borrar con `DROP PROCEDURE`).
 - La tabla `ej_usuarios` del tema de seguridad (queda creada, sin filas).
+
+En MongoDB (tema 06), los ejercicios usan la colección
+`curso_poo.ej_productos` y borran los documentos `PRUEBA_EJ_` que crean.
 - El ejercicio 05 de procedimientos cambia el precio de un producto y lo
   restaura al terminar.

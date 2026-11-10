@@ -2,7 +2,7 @@
 
 **Nivel:** avanzado
 **Antes de este tema:** `05_bases_de_datos/04_crud_con_interfaz`
-**Después de este tema:** fin de la ruta.
+**Después de este tema:** `05_bases_de_datos/06_crud_nosql`
 
 ## Objetivos
 
